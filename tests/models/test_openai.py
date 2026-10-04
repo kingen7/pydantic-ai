@@ -6440,7 +6440,10 @@ def test_transformer_untyped_array_explicit_strict_raises():
 @pytest.mark.parametrize(
     'list_type_schema',
     [
-        pytest.param({'type': ['null', 'object'], 'properties': {'x': {'type': 'string'}}, 'required': ['x']}, id='nullable-object'),
+        pytest.param(
+            {'type': ['null', 'object'], 'properties': {'x': {'type': 'string'}}, 'required': ['x']},
+            id='nullable-object',
+        ),
         pytest.param({'type': ['object', 'null']}, id='object-first'),
         pytest.param({'type': ['null', 'array'], 'items': {'type': 'string'}}, id='nullable-array'),
     ],
